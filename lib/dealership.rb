@@ -4,6 +4,7 @@ class Dealership
   define_method(:initialize) do |name|
     @name = name
     @id = @@dealerships.length().+(1)
+    @cars = []
   end
 
   define_method(:name) do
@@ -14,9 +15,13 @@ class Dealership
     @id
   end
 
- define_singleton_method(:all) do
-   @@dealerships
- end
+  define_method(:cars) do
+    @cars
+  end
+
+  define_singleton_method(:all) do
+    @@dealerships
+  end
 
   define_method(:save) do
     @@dealerships.push(self)
@@ -26,13 +31,19 @@ class Dealership
     @@dealerships = []
   end
 
-  define_singleton_method(:find) do |identification|
+  define_singleton_method(:find) do |id|
     found_dealership = nil
     @@dealerships.each() do |dealership|
-      if dealership.id().eql?(identification.to_i())
+      if dealership.id().eql?(id)
         found_dealership = dealership
       end
     end
     found_dealership
   end
+
+  define_method(:add_vehicle) do |vehicle|
+    @cars.push(vehicle)
+  end
+
+
 end

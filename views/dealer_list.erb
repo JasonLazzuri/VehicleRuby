@@ -1,8 +1,0 @@
-<h1>Dealerships</h1>
-
-<h3>View our dealers: </h3>
-<ul>
-  <% @dealerships.each() do |dealerships| %>
-    <li><a href="/dealer_list/<%= dealerships.id() %>"><%= dealerships.name() %></a></li>
-  <% end %>
-</ul>
