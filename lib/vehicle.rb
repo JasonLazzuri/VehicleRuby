@@ -57,10 +57,3 @@ class Vehicle
     found_vehicle
   end
 end
-
-# class Dealership
-#   @@dealership = []
-#
-#   define_method(:initialize) do ||
-#
-#   end
